@@ -51,7 +51,7 @@ public class Alcohol {
     }
 
     private void mostrarElisir() {
-        System.out.println("El mejor del mundo es el Blue Label de Johnnie Walker.\n"
+        System.out.println(" Y El mejor del mundo, es el Blue Label de Johnnie Walker.\n"
                 + "Nah, tampoco lo tomo porque un Johnnie Walker etiqueta negra lo tomo.\n"
                 + "Pero cuando es algo especial, tomo un Blue Label: es un elixir.\n"
                 + "Los otros son whisky: uno se toma, el otro se saborea.\n"

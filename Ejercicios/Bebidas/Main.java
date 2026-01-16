@@ -136,7 +136,7 @@ public class Main {
 
                 case 3:
                     System.out.println("Del 1 al 3 hay");
-                    Alcohol alcohol1 = new Alcohol("Blue Label", "Johnnie Walker", 31, true);
+                    Alcohol alcohol1 = new Alcohol("Blue Label", "Johnnie Walker", 31, false);
                     Alcohol alcohol2 = new Alcohol("Wodka", "Paises de la Comunidad de Estados Independientes", 200,
                             false);
                     Alcohol alcohol3 = new Alcohol("Vino", "Viva el Vino!!", 141224, false);
@@ -147,7 +147,8 @@ public class Main {
                     switch (sex2) {
                         case 1:
                             System.out.println(alcohol1);
-                            break;
+                            alcohol1.setElisir(true);
+                            break;                        
                         case 2:
                             System.out.println(alcohol2);
                             break;
