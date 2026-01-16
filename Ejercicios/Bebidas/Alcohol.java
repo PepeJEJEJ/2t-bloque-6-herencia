@@ -11,8 +11,10 @@ public class Alcohol {
         this.Marca = Marca;
         this.precioPlitro = precioPlitro;
         this.elisir=elisir;
+    if (elisir) {
+        mostrarElisir();
     }
-
+    }
     public String getNombre() {
         return Marca;
     }
