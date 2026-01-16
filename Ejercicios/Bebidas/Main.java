@@ -75,7 +75,7 @@ public class Main {
                     System.out.println("ESA NO LA TENGO");
                     break;
             }
-        } else {
+        } else if (edad > 18) {
             System.out.println("Tenemos bebidas, mira:");
             System.out.println("1 Zumos");
             System.out.println("2 Refrescos");
@@ -148,7 +148,7 @@ public class Main {
                         case 1:
                             System.out.println(alcohol1);
                             alcohol1.setElisir(true);
-                            break;                        
+                            break;
                         case 2:
                             System.out.println(alcohol2);
                             break;
@@ -165,6 +165,8 @@ public class Main {
                     System.out.println("ESA NO LA TENGO");
                     break;
             }
+        }else{
+            System.out.println("Si ya, y ahora me diras que vivistes en los tiempos de Jesucristo y por eso tienes 1234214872141427142142671422885891286915299658186918956325132869 años");
         }
     }
 }
