@@ -1,4 +1,4 @@
-package Ejercicios.Bebidas;
+package Bebidas;
 
 public class Zumo {
     private String Nombre;
