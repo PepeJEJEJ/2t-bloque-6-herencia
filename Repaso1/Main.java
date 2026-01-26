@@ -10,5 +10,6 @@ public class Main {
         System.out.println(pc2);
         System.out.println(tarjeta1);
         System.out.println(tarjeta2);
+
     }
 }
