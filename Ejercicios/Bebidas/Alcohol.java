@@ -1,4 +1,4 @@
-package Ejercicios.Bebidas;
+package Bebidas;
 
 public class Alcohol {
     private String Nombre;

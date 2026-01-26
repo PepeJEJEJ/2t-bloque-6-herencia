@@ -1,4 +1,4 @@
-package Ejercicios.Bebidas;
+package Bebidas;
 
 import java.util.Scanner;
 /*Ejercicio almacén de bebidas.
