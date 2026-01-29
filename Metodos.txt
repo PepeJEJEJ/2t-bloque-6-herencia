@@ -1,0 +1,48 @@
+Un método en Java es simplemente un bloque de código con un nombre, que realiza una acción y que puedes reutilizar cuando quieras. La idea es encapsular una tarea para no repetir código y organizar mejor tu programa.
+
+A continuación tienes una explicación clara y directa, como te gusta trabajar: ordenada, explícita y sin ambigüedades.
+
+🧩 Estructura básica de un método en Java
+java
+modificador tipoDeRetorno nombreMetodo(parámetros) {
+    // cuerpo del método
+    return valor; // solo si el método devuelve algo
+}
+🔍 Partes importantes
+modificador: normalmente public, private o protected.
+
+tipoDeRetorno: el tipo de dato que devuelve (int, String, void…).
+
+nombreMetodo: empieza en minúscula y usa camelCase.
+
+parámetros: datos que el método necesita para funcionar.
+
+return: solo si el método devuelve algo.
+
+📘 Ejemplos claros
+1. Método que NO devuelve nada (void)
+java
+public void saludar() {
+    System.out.println("Hola!");
+}
+2. Método que devuelve un número
+java
+public int sumar(int a, int b) {
+    return a + b;
+}
+3. Método que devuelve un texto
+java
+public String obtenerNombreCompleto(String nombre, String apellido) {
+    return nombre + " " + apellido;
+}
+🧪 Cómo se llama un método
+java
+saludar(); // si está en la misma clase
+
+int resultado = sumar(5, 3);
+System.out.println(resultado);
+Si el método está en otra clase:
+
+java
+MiClase obj = new MiClase();
+obj.saludar();
