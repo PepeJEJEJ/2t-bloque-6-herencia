@@ -1,7 +1,7 @@
 # 2t-bloque-6-herencia
 ---
 
-# Bloque 5: Introducción a la Programación Orientada a Objetos (POO)
+# Bloque 5 y 6: Introducción a la Programación Orientada a Objetos (POO) y Herencia
 
 ## Índice
 1. [Introducción a la Orientación a Objetos](#introducción-a-la-orientación-a-objetos)  
