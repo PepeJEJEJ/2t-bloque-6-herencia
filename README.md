@@ -198,3 +198,218 @@ public enum DiaSemana {
 ```
 
 ---
+
+---
+
+```markdown
+# 🧬 Bloque 6: Herencia en Java
+
+La **herencia** es uno de los pilares fundamentales de la Programación Orientada a Objetos.  
+Permite crear nuevas clases basadas en otras ya existentes, reutilizando código y añadiendo nuevas funcionalidades.
+
+---
+
+## 📑 Índice
+
+1. ¿Qué es la Herencia?  
+2. Superclase y Subclase  
+3. Uso de `extends`  
+4. Atributos y Métodos Heredados  
+5. Sobrescritura de Métodos (`@Override`)  
+6. Uso de `super`  
+7. Constructores y Herencia  
+8. Herencia Múltiple (por qué no existe en Java)  
+9. Ejemplo Completo  
+10. Clases `final` y Métodos `final`  
+
+---
+
+# 🧭 1. ¿Qué es la Herencia?
+
+La herencia permite que una clase (subclase) **herede atributos y métodos** de otra clase (superclase).  
+Esto permite:
+
+- Reutilizar código  
+- Evitar duplicación  
+- Crear jerarquías lógicas  
+- Especializar clases  
+
+Ejemplo conceptual:
+
+```
+Animal → Perro  
+Animal → Gato  
+```
+
+---
+
+# 🏛️ 2. Superclase y Subclase
+
+- **Superclase**: clase general  
+- **Subclase**: clase más específica que hereda de la superclase  
+
+Ejemplo:
+
+```java
+public class Animal {
+    protected String nombre;
+}
+```
+
+```java
+public class Perro extends Animal {
+    private String raza;
+}
+```
+
+---
+
+# 🧩 3. Uso de `extends`
+
+La palabra clave `extends` indica que una clase hereda de otra:
+
+```java
+public class Perro extends Animal {
+}
+```
+
+---
+
+# 📦 4. Atributos y Métodos Heredados
+
+La subclase hereda:
+
+- Atributos `public` y `protected`
+- Métodos `public` y `protected`
+
+No hereda:
+
+- Constructores  
+- Atributos/métodos `private`  
+
+---
+
+# 🔄 5. Sobrescritura de Métodos (`@Override`)
+
+Una subclase puede **modificar** el comportamiento de un método heredado:
+
+```java
+@Override
+public void hacerSonido() {
+    System.out.println("Guau guau!");
+}
+```
+
+---
+
+# 🧱 6. Uso de `super`
+
+`super` permite acceder a elementos de la superclase:
+
+### Llamar a un método de la superclase
+
+```java
+super.hacerSonido();
+```
+
+### Acceder a atributos heredados
+
+```java
+super.nombre = "Bobby";
+```
+
+---
+
+# 🏗️ 7. Constructores y Herencia
+
+Los constructores **no se heredan**, pero la subclase puede llamar al constructor de la superclase:
+
+```java
+public Perro(String nombre, String raza) {
+    super(nombre); // llama al constructor de Animal
+    this.raza = raza;
+}
+```
+
+---
+
+# 🚫 8. Herencia Múltiple en Java
+
+Java **no permite herencia múltiple de clases**:
+
+```java
+// ❌ Esto NO se puede hacer
+public class Perro extends Animal, Mamifero { }
+```
+
+Esto evita conflictos de métodos duplicados.  
+Para casos similares, Java usa **interfaces**.
+
+---
+
+# 🧪 9. Ejemplo Completo
+
+### Superclase
+
+```java
+public class Animal {
+    protected String nombre;
+
+    public Animal(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void hacerSonido() {
+        System.out.println("Sonido genérico de animal");
+    }
+}
+```
+
+### Subclase
+
+```java
+public class Perro extends Animal {
+    private String raza;
+
+    public Perro(String nombre, String raza) {
+        super(nombre);
+        this.raza = raza;
+    }
+
+    @Override
+    public void hacerSonido() {
+        System.out.println("Guau guau!");
+    }
+}
+```
+
+### Main
+
+```java
+public static void main(String[] args) {
+    Perro p = new Perro("Toby", "Labrador");
+    p.hacerSonido(); // Guau guau!
+}
+```
+
+---
+
+# 🔒 10. Clases `final` y Métodos `final`
+
+### Clase `final`
+No puede heredarse:
+
+```java
+public final class Utilidades { }
+```
+
+### Método `final`
+No puede sobrescribirse:
+
+```java
+public final void metodoSeguro() { }
+```
+
+---
+
+```
