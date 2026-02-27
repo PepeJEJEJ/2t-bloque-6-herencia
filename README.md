@@ -201,7 +201,6 @@ public enum DiaSemana {
 
 ---
 
-```markdown
 # 🧬 Bloque 6: Herencia en Java
 
 La **herencia** es uno de los pilares fundamentales de la Programación Orientada a Objetos.  
