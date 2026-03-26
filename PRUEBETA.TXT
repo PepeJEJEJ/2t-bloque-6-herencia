@@ -1,0 +1,330 @@
+Perfecto, ya tengo acceso al contenido de tus dos repositorios abiertos en las pestañas del navegador (  [github.com](https://github.com/PepeJEJEJ/2t-bloque-6-herencia/tree/main)  [github.com](https://github.com/MedacJaen/2t-bloque-6-herencia-PepeJEJEJ/tree/main)). Con esa referencia puedo construir **el ejercicio completo**, siguiendo exactamente el estilo, estructura y nivel de complejidad que usas en tus proyectos de herencia.
+
+A continuación te dejo **todo el sistema de clases**, completamente funcional, organizado y listo para copiar en tu proyecto.
+
+---
+
+# 🧩 **Ejercicio completo: Gestión de Medac (Herencia en Java)**
+
+A continuación tienes **todas las clases**:  
+✔ `Persona` (superclase)  
+✔ `Directivo`  
+✔ `Administrativo`  
+✔ `Profesor`  
+✔ `Alumno`  
+✔ `CentroEducativo`  
+✔ `Main` de prueba  
+
+El código sigue el estilo de tus repositorios: atributos privados, getters/setters, toString sobrescrito, métodos específicos, etc.
+
+---
+
+# 🧱 **Clase Persona (superclase)**
+
+```java
+public class Persona {
+    private String nombre;
+    private String apellidos;
+    private String dni;
+    private String email;
+
+    public Persona(String nombre, String apellidos, String dni, String email) {
+        this.nombre = nombre;
+        this.apellidos = apellidos;
+        this.dni = dni;
+        this.email = email;
+    }
+
+    public String getNombre() { return nombre; }
+    public String getApellidos() { return apellidos; }
+    public String getDni() { return dni; }
+    public String getEmail() { return email; }
+
+    public void setNombre(String nombre) { this.nombre = nombre; }
+    public void setApellidos(String apellidos) { this.apellidos = apellidos; }
+    public void setDni(String dni) { this.dni = dni; }
+    public void setEmail(String email) { this.email = email; }
+
+    @Override
+    public String toString() {
+        return "Nombre: " + nombre + " " + apellidos +
+               ", DNI: " + dni +
+               ", Email: " + email;
+    }
+
+    public String mostrarDetalles() {
+        return nombre + " " + apellidos + " (" + dni + ")";
+    }
+}
+```
+
+---
+
+# 🏢 **Clase Directivo**
+
+```java
+public class Directivo extends Persona {
+    private String cargo;
+    private int antiguedad;
+
+    public Directivo(String nombre, String apellidos, String dni, String email,
+                     String cargo, int antiguedad) {
+        super(nombre, apellidos, dni, email);
+        this.cargo = cargo;
+        this.antiguedad = antiguedad;
+    }
+
+    public String getCargo() { return cargo; }
+    public int getAntiguedad() { return antiguedad; }
+
+    public void setCargo(String cargo) { this.cargo = cargo; }
+    public void setAntiguedad(int antiguedad) { this.antiguedad = antiguedad; }
+
+    public double pagaExtraAntiguedad() {
+        return antiguedad * 25;
+    }
+
+    @Override
+    public String mostrarDetalles() {
+        return "El directivo " + getNombre() + " ocupa el cargo de " + cargo +
+               " y tiene " + antiguedad + " años de antigüedad.";
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+               ", Cargo: " + cargo +
+               ", Antigüedad: " + antiguedad +
+               ", Extra mensual: " + pagaExtraAntiguedad() + "€";
+    }
+}
+```
+
+---
+
+# 🗂️ **Clase Administrativo**
+
+```java
+public class Administrativo extends Persona {
+    private String departamento;
+    private int horasExtras;
+
+    public Administrativo(String nombre, String apellidos, String dni, String email,
+                          String departamento, int horasExtras) {
+        super(nombre, apellidos, dni, email);
+        this.departamento = departamento;
+        this.horasExtras = horasExtras;
+    }
+
+    public String getDepartamento() { return departamento; }
+    public int getHorasExtras() { return horasExtras; }
+
+    public void setDepartamento(String departamento) { this.departamento = departamento; }
+    public void setHorasExtras(int horasExtras) { this.horasExtras = horasExtras; }
+
+    public double pagaHorasExtras(double precioHora) {
+        return horasExtras * precioHora;
+    }
+
+    @Override
+    public String mostrarDetalles() {
+        return "Administrativo del departamento " + departamento +
+               " con " + horasExtras + " horas extras.";
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+               ", Departamento: " + departamento +
+               ", Horas extras: " + horasExtras;
+    }
+}
+```
+
+---
+
+# 👨‍🏫 **Clase Profesor**
+
+```java
+public class Profesor extends Persona {
+    private String materia;
+    private String ciclo;
+    private int numeroDeHoras;
+
+    public Profesor(String nombre, String apellidos, String dni, String email,
+                    String materia, String ciclo, int numeroDeHoras) {
+        super(nombre, apellidos, dni, email);
+        this.materia = materia;
+        this.ciclo = ciclo;
+        this.numeroDeHoras = numeroDeHoras;
+    }
+
+    @Override
+    public String mostrarDetalles() {
+        return "Profesor de " + materia + " en el ciclo " + ciclo +
+               " con " + numeroDeHoras + " horas semanales.";
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+               ", Materia: " + materia +
+               ", Ciclo: " + ciclo +
+               ", Horas semanales: " + numeroDeHoras;
+    }
+}
+```
+
+---
+
+# 🎓 **Clase Alumno**
+
+```java
+public class Alumno extends Persona {
+    private String ciclo;
+    private double notaMedia;
+
+    public Alumno(String nombre, String apellidos, String dni, String email,
+                  String ciclo, double notaMedia) {
+        super(nombre, apellidos, dni, email);
+        this.ciclo = ciclo;
+        this.notaMedia = notaMedia;
+    }
+
+    public boolean estaAprobado() {
+        return notaMedia >= 5;
+    }
+
+    @Override
+    public String mostrarDetalles() {
+        return "Alumno del ciclo " + ciclo +
+               " con nota media " + notaMedia +
+               " (" + (estaAprobado() ? "Aprobado" : "Suspenso") + ")";
+    }
+
+    @Override
+    public String toString() {
+        return super.toString() +
+               ", Ciclo: " + ciclo +
+               ", Nota media: " + notaMedia;
+    }
+}
+```
+
+---
+
+# 🏫 **Clase CentroEducativo**
+
+```java
+public class CentroEducativo {
+
+    private Directivo directivo;
+    private Administrativo[] administrativos = new Administrativo[2];
+    private Profesor[] profesores = new Profesor[5];
+    private Alumno[] alumnos = new Alumno[10];
+
+    private int contAdmin = 0;
+    private int contProfe = 0;
+    private int contAlumno = 0;
+
+    public void setDirectivo(Directivo d) {
+        if (directivo == null) {
+            directivo = d;
+        } else {
+            System.out.println("Ya hay un directivo asignado.");
+        }
+    }
+
+    public void addAdministrativo(Administrativo a) {
+        if (contAdmin < administrativos.length) {
+            administrativos[contAdmin++] = a;
+        } else {
+            System.out.println("No se pueden añadir más administrativos.");
+        }
+    }
+
+    public void addProfesor(Profesor p) {
+        if (contProfe < profesores.length) {
+            profesores[contProfe++] = p;
+        } else {
+            System.out.println("No se pueden añadir más profesores.");
+        }
+    }
+
+    public void addAlumno(Alumno a) {
+        if (contAlumno < alumnos.length) {
+            alumnos[contAlumno++] = a;
+        } else {
+            System.out.println("No se pueden añadir más alumnos.");
+        }
+    }
+
+    public void mostrarCentro() {
+        System.out.println("=== DIRECTIVO ===");
+        System.out.println(directivo);
+
+        System.out.println("\n=== ADMINISTRATIVOS ===");
+        for (Administrativo a : administrativos) {
+            if (a != null) System.out.println(a);
+        }
+
+        System.out.println("\n=== PROFESORES ===");
+        for (Profesor p : profesores) {
+            if (p != null) System.out.println(p);
+        }
+
+        System.out.println("\n=== ALUMNOS ===");
+        for (Alumno al : alumnos) {
+            if (al != null) System.out.println(al);
+        }
+    }
+}
+```
+
+---
+
+# ▶️ **Clase Main (ejemplo de uso)**
+
+```java
+public class Main {
+    public static void main(String[] args) {
+
+        CentroEducativo centro = new CentroEducativo();
+
+        centro.setDirectivo(new Directivo(
+                "Ana", "López", "12345678A", "ana@medac.es",
+                "Directora General", 10));
+
+        centro.addAdministrativo(new Administrativo(
+                "Luis", "Martín", "11111111A", "luis@medac.es",
+                "Secretaría", 12));
+
+        centro.addAdministrativo(new Administrativo(
+                "Marta", "Ruiz", "22222222B", "marta@medac.es",
+                "Gestión Académica", 8));
+
+        centro.addProfesor(new Profesor(
+                "Carlos", "Gómez", "33333333C", "carlos@medac.es",
+                "Programación", "DAM", 12));
+
+        centro.addAlumno(new Alumno(
+                "Pepe", "Aranda", "44444444D", "pepe@medac.es",
+                "DAM", 7.5));
+
+        centro.mostrarCentro();
+    }
+}
+```
+
+---
+
+# 🎉 ¿Quieres que te genere también…?
+
+Puedo prepararte:
+
+- Un **diagrama UML**  
+- Un **ZIP listo para entregar**  
+- Un **main más completo con menú**  
+- O adaptar el código al estilo exacto de tu profesor
+
+Solo dímelo y lo preparo.
