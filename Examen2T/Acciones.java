@@ -1,17 +1,13 @@
-public class Acciones extends Activos{
+public class Acciones extends Activos {
     private String Pais;
-    public Acciones(String Pais) {
+
+    public Acciones(String Nombre, Double Cantidad, String Pais) {
         super(Nombre, Cantidad);
-        this.Pais=Pais;
-    }
-    public String getPais() {
-        return Pais;
-    }
-    public void setPais(String Pais) {
         this.Pais = Pais;
     }
+
     @Override
-    public String tostring(){
-        return "Nombre "+Nombre+" Cantidad: "+Cantidad+" En "+Pais;
+    public String toString() {
+        return Nombre + " (" + Cantidad + ") en " + Pais;
     }
 }
