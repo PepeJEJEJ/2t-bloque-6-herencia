@@ -41,8 +41,4 @@ public class Tarjeta {
     public String toString() {
         return super.toString();
     }
-    public int getMemoria() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getMemoria'");
-    }
 }
