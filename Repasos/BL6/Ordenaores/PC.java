@@ -25,7 +25,7 @@ public class PC {
         this.tarjeta = memoria;
     }
     
-    public boolean MasMemo(PC p){
+    public boolean MasMemo (PC p){
         return this.tarjeta.getMemoria()>=p.tarjeta.getMemoria();
     }
 
